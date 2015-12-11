@@ -1,0 +1,31 @@
+<launch>
+
+	<!-- Camera driver -->
+	<include file="$(find vspgrid)/launch/open_cam.launch" />
+
+	<node name="image_show" pkg="image_view" type="image_view" output="screen" >
+		<remap from="image" to="usb_cam/image_raw" />
+	</node>
+
+	<!-- Image rectification -->
+	<node name="rectify" pkg="image_proc" type="image_proc" respawn="false" output="screen" ns="/usb_cam"/>
+
+	<!-- AR Alvar Tracker -->
+	<arg name="marker_size" default="5" />
+	<arg name="max_new_marker_error" default="0.1" />
+	<arg name="max_track_error" default="0.2" />
+
+	<arg name="camera_frame_id" default="cam" />
+	<arg name="cam_image_topic" default="/usb_cam/image_raw" />
+	<arg name="cam_info_topic" default="/usb_cam/camera_info" />
+
+	<arg name="output_frame" default="$(arg camera_frame_id)" />
+	<arg name="bundle_files" default="$(find vspgrid)/config/radial_bundle.xml" />
+
+	<!-- using bundle target -->
+	<node name="ar_track_alvar" pkg="ar_track_alvar" type="findMarkerBundlesNoKinect" respawn="false" output="screen" args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame) $(arg bundle_files)" />
+
+	<!-- using single tag -->
+<!-- 	<node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen" args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame)" /> -->
+
+</launch>

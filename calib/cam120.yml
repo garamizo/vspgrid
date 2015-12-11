@@ -1,0 +1,20 @@
+image_width: 640
+image_height: 480
+camera_name: cam120
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [429.163852, 0, 315.938109, 0, 428.78756, 245.719553, 0, 0, 1]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.333994, 0.104292, -0.00142, 2.6e-05, 0]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [335.76355, 0, 313.453483, 0, 0, 377.626007, 245.940553, 0, 0, 0, 1, 0]

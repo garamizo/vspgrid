@@ -1,0 +1,21 @@
+<launch>
+
+	<!-- Define static transformations -->
+	<node pkg="tf" type="static_transform_publisher" name="t1a" args="-10e-3 90e-3 40e-3 -1.57 0 -1.57 gripper cam120 10" />
+	<node pkg="tf" type="static_transform_publisher" name="t2" args="0 -120e-3 130e-3 0 1.57 -1.57 ar_marker_0 female 10" />
+	<node pkg="tf" type="static_transform_publisher" name="t3" args="-100e-3 0 0 0 0 0 female _female 10" />
+	<node pkg="tf" type="static_transform_publisher" name="t5" args="100e-3 	0        150e-3 0 0.5 0  base search1 10" />
+	<node pkg="tf" type="static_transform_publisher" name="t6" args="80e-3  	80e-3   150e-3 0.7854 0.5 0 base search2 10" />
+	<node pkg="tf" type="static_transform_publisher" name="t7" args="80e-3  -80e-3 150e-3 -0.7854 0.5 0 base search3 10" />
+	<node pkg="tf" type="static_transform_publisher" name="t8" args="0 0 0 0 0.785 0 gripper male 10" />
+
+	<!-- Start controller. Brain -->
+	<!--node pkg="visual_servoing_powergrid" type="visser.py" name="main" /-->
+
+	<!-- Start vision system. Eyes -->
+	<include file="$(find vspgrid)/launch/init_vision.launch" />
+
+	<!-- Start manipulator interface. Hands -->
+	<include file="$(find vspgrid)/launch/init_manip.launch" />
+
+</launch>

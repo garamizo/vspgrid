@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="widowx_arm">
+
+
+   <!--link name="plate_top_link"/-->
+   <!--joint name="fixed" type="fixed">
+      <parent link="plate_top_link" />
+      <child link="ph_base_link" />
+   </joint-->
+
+      <!-- links -->
+      <link name="base">
+         <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/base_link.stl"/>
+            </geometry>
+             
+       </visual>
+         <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/base_link.stl"/>
+            </geometry>
+         </collision>
+         <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+      <link name="shoulder_link">
+         <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/shoulder_link.stl" />
+            </geometry>
+             
+         </visual>
+         <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/shoulder_link.stl"/>
+            </geometry>
+         </collision>
+         <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+      <link name="biceps_link">
+         <visual>
+            <origin xyz="0.04825 0 0.14" rpy="0 0 0" />
+            <!--origin xyz="0 0 0" rpy="0 0 0" /-->
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/biceps_link.stl" />
+            </geometry>
+             
+         </visual>
+         <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/biceps_link.stl" />
+            </geometry>
+         </collision>
+         <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+      <link name="forearm_link">
+         <visual>
+            <origin xyz="0 0 0.14203" rpy="0 0 0" />
+      <!--origin xyz="0 0 0" rpy="0 0 0" /-->
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/forearm_link.stl"/>
+            </geometry>
+            
+         </visual>
+         <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/forearm_link.stl"/>
+            </geometry>
+         </collision>
+         <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+         </inertial>
+      </link>
+      <link name="wrist_1_link">
+         <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/wrist_1_link.stl"/>
+            </geometry>
+             
+         </visual>
+         <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/wrist_1_link.stl"/>
+            </geometry>
+         </collision>
+         <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+      <link name="wrist_2_link">
+         <visual>
+            <origin xyz="0 0 0.043" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/wrist_2_link.stl"/>
+            </geometry>
+             
+         </visual>
+         <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/wrist_2_link.stl"/>
+            </geometry>
+         </collision>
+         <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+      <link name="gripper_rail">
+         <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/gripper_rail_link.stl"/>
+            </geometry>
+             
+         </visual>
+         <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/gripper_rail_link.stl"/>
+            </geometry>
+         </collision>
+         <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+      <link name="gripper_1_link">
+         <visual>
+            <origin xyz="0 -0.0007 0" rpy="0 0 1.57" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/gripper_hand_fixed_link.stl"/>
+            </geometry>
+             
+         </visual>
+         <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/gripper_hand_fixed_link.stl"/>
+            </geometry>
+         </collision>
+         <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+      <link name="gripper_2_link">
+         <visual>
+            <origin xyz="0 0.0007 0" rpy="0 0 -1.57" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/gripper_hand_fixed_link.stl"/>
+            </geometry>
+             
+         </visual>
+         <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+               <mesh filename="package://vspgrid/mesh/gripper_hand_fixed_link.stl"/>
+            </geometry>
+         </collision>
+         <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1" />
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0" />
+         </inertial>
+      </link>
+
+      <link name="gripper">
+        <origin xyz="0 0 0" rpy="0 0 0" />   
+      </link>
+
+      <link name="male">
+        <origin xyz="0 0 0" rpy="0 0 0" />   
+      </link>
+      <!-- joints -->
+      <!--joint name="arm_base_joint" type="fixed">
+         <origin xyz="${M_SCALE*14.5} ${M_SCALE*0.2} ${M_SCALE*0.2}" rpy="${M_PI*0} ${M_PI*0} ${-M_PI/2}" />
+         <parent link="plate_top_link" />
+         <child link="base"/>
+         <axis xyz="0 1 0" />
+      </joint-->
+      <joint name="joint_1" type="revolute">
+         <origin xyz="0 0 0.125" rpy="0 0 0" />
+         <parent link="base" />
+         <child link="shoulder_link" />
+         <axis xyz="0 0 1"/>
+         <limit lower="-2.617" upper="2.617" effort="0" velocity="0.785" />
+      </joint>
+      <joint name="joint_2" type="revolute">
+         <!--origin xyz="0.04825 0 0.14203" rpy="0 0 0" /-->
+         <origin xyz="0 0 0" rpy="0 0 0" />
+         <parent link="shoulder_link" />
+         <child link="biceps_link" />
+         <axis xyz="0 1 0" />
+         <limit lower="-1.575" upper="1.575" effort="0" velocity="1.571" />
+      </joint>
+      <joint name="joint_3" type="revolute">
+         <origin xyz="0.04825 0 0.14203" rpy="0 1.571 0" />
+         <parent link="biceps_link" />
+         <child link="forearm_link" />
+         <axis xyz="0 1 0" />
+         <limit lower="0" upper="2.617" effort="0" velocity="1.571" />
+      </joint>
+      <joint name="joint_4" type="revolute">
+         <origin xyz="0 0 0.14203" rpy="0 1.571 0" />
+         <parent link="forearm_link" />
+         <child link="wrist_1_link" />
+         <axis xyz="0 1 0" />
+         <limit lower="-1.745" upper="1.745" effort="0" velocity="1.571" />
+      </joint>
+      <joint name="joint_5" type="revolute">
+         <origin xyz="0 0 0.0715" rpy="0 0 0" />
+         <parent link="wrist_1_link" />
+         <child link="wrist_2_link" />
+         <axis xyz="0 0 1" />
+         <limit lower="-2.617" upper="2.617" effort="0" velocity="1.571" />
+      </joint>
+      <joint name="joint_6" type="fixed">
+         <origin xyz = "0 0 0.043" rpy="0 0 0" />
+         <parent link="wrist_2_link" />
+         <child link="gripper_rail" />
+         <axis xyz="0 0 1" />
+         <limit lower="-0.31" upper="0.1" effort="0" velocity="0.5" />
+      </joint>
+      <joint name="joint_7" type="revolute">
+         <origin xyz="0 0 0" rpy="1.8 0 0" />
+         <parent link="gripper_rail" />
+         <child link="gripper_1_link" />
+         <axis xyz="1 0 0" />
+         <limit lower="0" upper="0.027" effort="0" velocity="0.5" />
+      </joint>
+      <joint name="joint_8" type="revolute">
+         <origin xyz="0 0 0" rpy="-1.8 0 0" />
+         <parent link="gripper_rail" />
+         <child link="gripper_2_link" />
+         <mimic joint="joint_7" />
+         <axis xyz="-1 0 0" />
+         <limit lower="0" upper="0.027" effort="0" velocity="0.5" />
+      </joint> 
+
+      <joint name="joint_9" type="fixed">
+         <origin xyz="0 0 0.01" rpy="0 3.14 0" />
+         <parent link="gripper_rail" />
+         <child link="gripper" />
+         <axis xyz="-1 0 0" />
+         <limit lower="0" upper="0.027" effort="0" velocity="0.5" />
+      </joint>  
+
+      <joint name="joint_10" type="fixed">
+         <origin xyz="0 0 0" rpy="0 0.785 0" />
+         <parent link="gripper" />
+         <child link="male" />
+         <axis xyz="-1 0 0" />
+         <limit lower="0" upper="0.027" effort="0" velocity="0.5" />
+      </joint>  
+<!--       <joint name="joint_7" type="prismatic">
+         <origin xyz="0 0 0" rpy="0 0 0" />
+         <parent link="gripper" />
+         <child link="gripper_1_link" />
+         <axis xyz="0 -1 0" />
+         <limit lower="0" upper="0.027" effort="0" velocity="0.5" />
+      </joint>
+      <joint name="joint_8" type="prismatic">
+         <origin xyz="0 0 0" rpy="0 0 0" />
+         <parent link="gripper" />
+         <child link="gripper_2_link" />
+         <mimic joint="joint_7" />
+         <axis xyz="0 1 0" />
+         <limit lower="0" upper="0.027" effort="0" velocity="0.5" />
+      </joint> -->
+
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_1"/>
+    <actuator name="motor1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_2"/>
+    <actuator name="motor2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_3"/>
+    <actuator name="motor3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_4"/>
+    <actuator name="motor4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_6"/>
+    <actuator name="motor5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>0.5</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ <transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_7"/>
+    <actuator name="motor6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>0.5</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</robot>

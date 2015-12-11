@@ -1,0 +1,14 @@
+port: /dev/ttyUSB0
+read_rate: 50
+write_rate: 50
+joints: {
+    joint_1: {id: 1, ticks: 4096, range: 360.0, max_speed: 100.0, min_angle: -180, max_angle: 180},
+    joint_2: {id: 2, ticks: 4096, range: 360.0, max_speed: 100.0, min_angle: -180.0, max_angle: 180.0},
+    joint_3: {id: 3, ticks: 4096, range: 360.0, max_speed: 100.0, min_angle: -90.0, max_angle: 270.0, invert: true, neutral: 2048},
+    joint_4: {id: 4, ticks: 4096, range: 360.0, max_speed: 100.0, min_angle: -90.0, max_angle: 90.0, invert: true, neutral: 1024},
+    joint_5: {id: 5, ticks: 1024, range: 300.0, max_speed: 100.0, min_angle: -120, max_angle: 120, neutral: 512},
+    joint_7: {id: 6, ticks: 1024, range: 300.0, max_speed: 100.0, min_angle: -90.0, max_angle: 90.0},
+}
+controllers: {
+    arm_controller: {type: follow_controller, joints: [joint_1, joint_2, joint_3, joint_4, joint_5, joint_7]},
+}

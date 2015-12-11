@@ -1,0 +1,20 @@
+# installation
+
+sudo apt-get install ros-indigo-ar-track-alvar
+sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+cd ~/catkin_ws/src
+git clone https://github.com/bosch-ros-pkg/usb_cam.git
+git clone -b kdl_parser_py https://github.com/ros/robot_model.git
+git clone https://github.com/vanadiumlabs/arbotix_ros.git
+git clone https://github.com/ros/urdfdom.git
+wget https://raw.github.com/ros-gbp/urdfdom-release/debian/indigo/trusty/urdfdom/package.xml
+devel_prefix=$(cd $(catkin_find --first-only)/.. && pwd)
+cd ../urdf_parser_py
+python setup.py install --install-layout deb --prefix $devel_prefix
+
+
+# intrinsic calibration
+
+rosrun camera_calibration cameracalibrator.py --size 11x7 --square 0.02 image:=/usb_cam/image_raw camera:=/usb_cam
+mv ost.txt ost.ini
+rosrun camera_calibration_parsers convert ost.ini cal.yml

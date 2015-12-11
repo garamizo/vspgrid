@@ -1,0 +1,21 @@
+<launch>
+
+<!-- rosrun camera_calibration cameracalibrator.py --size 11x7 --square 0.02 image:=/usb_cam/image_raw camera:=/usb_cam
+-- extract calibration file
+mv ost.txt ost.ini
+rosrun camera_calibration_parsers convert ost.ini cal.yml -->
+
+
+	<arg name="camera_frame_id" default="cam120" />
+
+	<node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
+		<param name="video_device" value="/dev/video0" />
+		<param name="image_width" value="640" />
+		<param name="image_height" value="480" />
+		<param name="pixel_format" value="yuyv" />
+		<param name="camera_frame_id" value="$(arg camera_frame_id)" />
+		<param name="io_method" value="mmap"/>
+		<param name="framerate" value="30"/>
+	</node>
+
+</launch>
