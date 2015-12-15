@@ -229,7 +229,7 @@
          <limit lower="0" upper="2.617" effort="0" velocity="1.571" />
       </joint>
       <joint name="joint_4" type="revolute">
-         <origin xyz="0 0 0.14203" rpy="0 1.571 0" />
+         <origin xyz="0 0 0.14203" rpy="0 0 0" />
          <parent link="forearm_link" />
          <child link="wrist_1_link" />
          <axis xyz="0 1 0" />

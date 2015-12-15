@@ -16,6 +16,15 @@ import tf_conversions.posemath
 from tf import transformations as tfs
 import tf
 
+class WidowX(object):
+    def __init__(self):
+        joints = numpy.zeros(5)
+
+    def calc_posematrix(joints):
+        Rx = rotation_matrix(1, [1, 0, 0])
+        return Rx
+
+
 
 class Robot(object):
     def __init__(self):
@@ -31,7 +40,7 @@ class Robot(object):
         pub6 = rospy.Publisher("joint_7/command", Float64, queue_size=5)
         self.pubs = [pub1, pub2, pub3, pub4, pub5, pub6]
         
-        
+
         # define kinematic chain for WidowX
         self.space_from_matrix = lambda T: numpy.array([T[0,3], T[1,3], T[2,3], math.atan2(T[1,0], T[0,0]), math.asin(-T[2,0])]) # x y z yaw pitch        
         filePath = '/home/hirolab/catkin_ws/src/vspgrid/urdf/widowx2.urdf'
