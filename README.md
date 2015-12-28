@@ -1,5 +1,5 @@
 # vspgrid
-Visual Servoing for Power Grid
+**V**isual **S**ervoing for **P**ower **Grid**
 
 Introduction
   - [Overview](https://github.com/garamizo/vspgrid/wiki#introduction)
