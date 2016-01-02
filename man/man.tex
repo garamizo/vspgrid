@@ -11,6 +11,7 @@
 \usepackage{xcolor}
 \usepackage{appendix}
 \usepackage{pdfpages}
+\usepackage[colorinlistoftodos, textwidth=\marginparwidth]{todonotes}
 
 \lstset{
     frame=single,
@@ -50,7 +51,7 @@
 
 \section{Background}
 
-    This section provides a brief overview of subjects related to visual servoing for the power grid project. Initially it describes the topic of robotic manipulation, which involves inverse kinematics solution and the command interface to Trossen WidowX manipulator. Later it explores computer vision, like camera calibration, image acquisition parameters and tracking algorithms. Finally the visual servoing theory is reviewed, combining the two fields.
+    This section provides a brief overview of subjects related to visual servoing for the power grid project. Initially it describes the topic of robotic manipulation, which involves inverse kinematics solution and the command interface to Trossen WidowX manipulator. Later it explores computer vision, like camera calibration, image acquisition parameters and tracking algorithms. Finally the visual servoing theory is reviewed, combining the two fields. \todo{add something here}
 
     \subsection{Robotic Manipulator}
     % serial manipulator, placement of coordinate frames, end-effector dk, Euler parameter conversion, nonlinear solution
@@ -145,6 +146,10 @@
     \subsection{Computer Vision}
     % Definition, camera-lenses parameters, calibration, camera settings
         Computer vision uses image processing to reproduce the human ability of vision. The performance of these algorithms depends on a good camera-lenses selection, camera settings and calibration procedures. This section will give an overview of these subjects.
+        
+        Colour is our perception of the light reflected from a scene. The source of the light, or illuminant, emits electro-magnetic radiation at a wavelength of $ 400 $ to $ 700\ nm $ and as it clashes against the scene surface, some frequency components are absorved and others are reflected, depending on the material's reflectivity properties.
+        
+        Saturation: Purity of a color, or how 
         
         % camera-lenses parameters and settings: camera models, resolution, frame rate, lenses (FOV), distortion
         
