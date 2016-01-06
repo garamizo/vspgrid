@@ -1,17 +1,17 @@
 <launch>
 
-	<!-- Driver interface to the dynamixel motors -->
-	<node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen">
-		<rosparam file="$(find vspgrid)/config/dynnet.yaml" command="load" />
-	</node>
+  <!-- Driver interface to the dynamixel motors -->
+  <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen">
+    <rosparam file="$(find vspgrid)/config/dynnet.yaml" command="load" />
+  </node>
 
-	<!-- or Simulate robot interface -->
-<!-- 	<node pkg="vspgrid" type="robot_sim.py" name="simulator" /> -->
+  <!-- or Simulate robot interface -->
+  <!--  <node pkg="vspgrid" type="robot_sim.py" name="simulator" /> -->
 
-	<!-- Visualize robot on RVIZ -->
-	<param name="robot_description" command="cat $(find vspgrid)/urdf/widowx.urdf" />
-	<param name="use_gui" value="True"/>
+  <!-- Visualize robot on RVIZ -->
+  <param name="robot_description" command="cat $(find vspgrid)/urdf/widowx.urdf" />
+  <param name="use_gui" value="True"/>
 
-	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
 
 </launch>
