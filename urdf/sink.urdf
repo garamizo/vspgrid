@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="sink">
+
+  <link name="ar_marker_0"/>
+  <link name="fconn"/>
+
+  <joint name="to_female" type="fixed">
+    <parent link="ar_marker_0"/>
+    <child link="fconn"/>
+    <origin xyz="0 -120e-3 130e-3" rpy="3.14 1.57 -1.57"/>
+  </joint>
+
+</robot>

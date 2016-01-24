@@ -10,6 +10,7 @@
 		<param name="camera_frame_id" value="$(arg camera_frame_id)" />
 		<param name="io_method" value="mmap"/>
 		<param name="framerate" value="30"/>
+		<param name="camera_info_url" value="file://$(find vspgrid)/calib/cam120.yml" />
 	</node>
 
 </launch>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="widowx">
+
+  <link name="base"/>
+  <link name="link1"/>
+  <link name="link2"/>
+  <link name="link3"/>
+  <link name="link4"/>
+  <link name="link5"/>
+  <link name="cam"/>
+  <link name="mconn"/>
+
+  <joint name="q1" type="revolute">
+    <parent link="base"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0.125" rpy="0 0 0" />
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.617" upper="2.617" effort="0" velocity="0.1" />
+  </joint>
+
+  <joint name="q2" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.575" upper="1.575" effort="0" velocity="1.571" />
+  </joint>
+
+  <joint name="q3" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="0.04825 0 0.14203" rpy="0 1.571 0" />
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.575" upper="1.575" effort="0" velocity="1.571" />
+  </joint>
+
+  <joint name="q4" type="revolute">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <origin xyz="0 0 0.14203" rpy="0 0 0" />
+    <axis xyz="0 1 0"/>
+    <limit lower="-1.745" upper="1.745" effort="0" velocity="1.571" />
+  </joint>
+
+  <joint name="q5" type="revolute">
+    <parent link="link4"/>
+    <child link="link5"/>
+    <origin xyz="0 0 0.0715" rpy="0 0 0" />
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.617" upper="2.617" effort="0" velocity="1.571" />
+  </joint>
+
+  <joint name="to_cam" type="fixed">
+    <parent link="link5"/>
+    <child link="cam"/>
+    <origin xyz="-8e-2 0 2.5e-2" rpy="0.7854 0 -1.5708"/>
+  </joint>
+
+  <joint name="to_tool" type="fixed">
+    <parent link="link5"/>
+    <child link="mconn"/>
+    <origin xyz="0 0 0.065" rpy="0 -2.3562 0"/>
+  </joint>
+
+</robot>

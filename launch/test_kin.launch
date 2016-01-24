@@ -1,13 +1,20 @@
 <launch>
 
 
-  <param name="robot_description" textfile="$(find vspgrid)/urdf/al5dmod.urdf"/>
+	<param name="robot_description" textfile="$(find vspgrid)/urdf/widowx2.urdf"/>
 	<param name="use_gui" value="true"/>
 
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+		<param name="publish_frequency" value="50"/>
+	</node>
 
-  <node 
-    name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
-    <param name="publish_frequency" value="50"/>
-  </node>
+	<group ns="sink">
+		<param name="robot_description" textfile="$(find vspgrid)/urdf/sink.urdf"/>
+
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+			<param name="publish_frequency" value="50"/>
+		</node>
+	</group>
+
 </launch>
