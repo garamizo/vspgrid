@@ -20,7 +20,7 @@
 	<arg name="cam_info_topic" default="/usb_cam/camera_info" />
 
 	<arg name="output_frame" default="$(arg camera_frame_id)" />
-	<arg name="bundle_files" default="$(find vspgrid)/config/radial_bundle.xml" />
+	<arg name="bundle_files" default="$(find vspgrid)/config/radial_bundle3.xml" />
 
 	<!-- using bundle target -->
 	<node name="ar_track_alvar" pkg="ar_track_alvar" type="findMarkerBundlesNoKinect" respawn="false" output="screen" args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame) $(arg bundle_files)" />

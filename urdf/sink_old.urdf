@@ -5,12 +5,11 @@
   <link name="fconn"/>
   <link name="fconn_"/>
   <link name="fconnp"/>
-  <link name="fconnp2"/>
 
   <joint name="to_female" type="fixed">
     <parent link="ar_marker_0"/>
     <child link="fconn"/>
-    <origin xyz="0 -140e-3 135e-3" rpy="3.14 1.57 -1.57"/>
+    <origin xyz="0 -120e-3 150e-3" rpy="3.14 1.57 -1.57"/>
   </joint>
 
   <joint name="approx" type="fixed">
@@ -22,13 +21,7 @@
   <joint name="press" type="fixed">
     <parent link="fconn"/>
     <child link="fconnp"/>
-    <origin xyz="50e-3 0 30e-3" rpy="0 -1.1 0"/>
-  </joint>
-
-  <joint name="press2" type="fixed">
-    <parent link="fconn"/>
-    <child link="fconnp2"/>
-    <origin xyz="80e-3 0 30e-3" rpy="0 -1.1 0"/>
+    <origin xyz="60e-3 0 5e-3" rpy="0 -1.1 0"/>
   </joint>
 
 </robot>

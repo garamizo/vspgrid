@@ -7,7 +7,7 @@ joints: {
     q3: {id: 3, ticks: 4096, range: 360.0, max_speed: 100.0, min_angle: -90.0, max_angle: 270.0, invert: true},
     q4: {id: 4, ticks: 4096, range: 360.0, max_speed: 100.0, min_angle: -90.0, max_angle: 90.0, invert: true, neutral: 2043},
     q5: {id: 5, ticks: 1024, range: 300.0, max_speed: 100.0, min_angle: -120, max_angle: 120, neutral: 512},
-    q6: {id: 6, ticks: 1024, range: 300.0, max_speed: 100.0, min_angle: -90.0, max_angle: 90.0},
+    q6: {id: 6, ticks: 1024, range: 300.0, max_speed: 100.0, min_angle: -90.0, max_angle: 90.0, invert: false},
 }
 controllers: {
     arm_controller: {type: follow_controller, joints: [q1, q2, q3, q4, q5, q6]},
